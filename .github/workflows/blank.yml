@@ -46,4 +46,4 @@ jobs:
                 "status": "${{ steps.info.outputs.status }}",
                 "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
               }' \
-          https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/31e04e99b96545d8b8181ad7483ffc72/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Z0pjE1NBl-gws9ZkwB0p3poorhJRxrMzelKgCQBDxHo
+          "https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/67e4344eac42421ab0f7429b963d4985/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fjk9ds9PtEF9jYdREfqHAcQlDRLqL1xU1HzY35PYdqU"
