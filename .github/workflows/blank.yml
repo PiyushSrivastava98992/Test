@@ -29,35 +29,32 @@ jobs:
 
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d "{
-              \"contentType\": \"application/vnd.microsoft.card.adaptive\",
-              \"content\": {
-                \"type\": \"AdaptiveCard\",
-                \"version\": \"1.4\",
-                \"body\": [
+            -d "[
                   {
-                    \"type\": \"TextBlock\",
-                    \"size\": \"Large\",
-                    \"weight\": \"Bolder\",
-                    \"text\": \"GitHub Actions Pipeline ${STATUS}\"
-                  },
-                  {
-                    \"type\": \"FactSet\",
-                    \"facts\": [
-                      { \"title\": \"User\", \"value\": \"${{ github.actor }}\" },
-                      { \"title\": \"Project\", \"value\": \"${{ github.repository_owner }}\" },
-                      { \"title\": \"Repo\", \"value\": \"${{ github.repository }}\" },
-                      { \"title\": \"Workflow\", \"value\": \"${{ github.workflow }}\" },
-                      { \"title\": \"Run ID\", \"value\": \"${{ github.run_id }}\" },
-                      { \"title\": \"Run #\", \"value\": \"${{ github.run_number }}\" },
-                      { \"title\": \"Branch\", \"value\": \"${{ github.ref_name }}\" },
-                      { \"title\": \"Commit\", \"value\": \"${{ github.sha }}\" },
-                      { \"title\": \"Time\", \"value\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\" },
-                      { \"title\": \"Status\", \"value\": \"${STATUS}\" },
-                      { \"title\": \"Error\", \"value\": \"${{ job.status == 'failure' && 'See logs in GitHub Actions' || 'N/A' }}\" }
-                    ]
+                    \"contentType\": \"application/vnd.microsoft.card.adaptive\",
+                    \"content\": {
+                      \"type\": \"AdaptiveCard\",
+                      \"version\": \"1.4\",
+                      \"body\": [
+                        {
+                          \"type\": \"TextBlock\",
+                          \"size\": \"Large\",
+                          \"weight\": \"Bolder\",
+                          \"text\": \"GitHub Actions Pipeline ${STATUS}\"
+                        },
+                        {
+                          \"type\": \"FactSet\",
+                          \"facts\": [
+                            { \"title\": \"User\", \"value\": \"${{ github.actor }}\" },
+                            { \"title\": \"Repo\", \"value\": \"${{ github.repository }}\" },
+                            { \"title\": \"Workflow\", \"value\": \"${{ github.workflow }}\" },
+                            { \"title\": \"Run ID\", \"value\": \"${{ github.run_id }}\" },
+                            { \"title\": \"Branch\", \"value\": \"${{ github.ref_name }}\" },
+                            { \"title\": \"Status\", \"value\": \"${STATUS}\" }
+                          ]
+                        }
+                      ]
+                    }
                   }
-                ]
-              }
-            }" \
+                ]"\
             "https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/67e4344eac42421ab0f7429b963d4985/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fjk9ds9PtEF9jYdREfqHAcQlDRLqL1xU1HzY35PYdqU"
