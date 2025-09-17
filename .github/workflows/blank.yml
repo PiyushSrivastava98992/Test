@@ -29,18 +29,5 @@ jobs:
 
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d "{
-              \"user\": \"${{ github.actor }}\",
-              \"time\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\",
-              \"project\": \"${{ github.repository_owner }}\",
-              \"repo\": \"${{ github.repository }}\",
-              \"workflow\": \"${{ github.workflow }}\",
-              \"run_id\": \"${{ github.run_id }}\",
-              \"run_number\": \"${{ github.run_number }}\",
-              \"branch\": \"${{ github.ref_name }}\",
-              \"commit\": \"${{ github.sha }}\",
-              \"status\": \"${STATUS}\",
-              \"error\": \"${{ job.status == 'failure' && 'See logs in GitHub Actions' || '' }}\",
-              \"message\": \"Pipeline $STATUS for ${{ github.repository }}\"
-            }" \
+            -d "Test" \
             "https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/67e4344eac42421ab0f7429b963d4985/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fjk9ds9PtEF9jYdREfqHAcQlDRLqL1xU1HzY35PYdqU"
