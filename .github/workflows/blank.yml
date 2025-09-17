@@ -43,4 +43,4 @@ jobs:
               \"error\": \"${{ job.status == 'failure' && 'See logs in GitHub Actions' || '' }}\",
               \"message\": \"Pipeline $STATUS for ${{ github.repository }}\"
             }" \
-            "https://prod-12.centralindia.logic.azure.com:443/workflows/.../triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=7D..."
+            "https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/67e4344eac42421ab0f7429b963d4985/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fjk9ds9PtEF9jYdREfqHAcQlDRLqL1xU1HzY35PYdqU"
