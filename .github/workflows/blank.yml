@@ -40,17 +40,17 @@ jobs:
                   {
                     "contentType": "application/vnd.microsoft.card.adaptive",
                     "content": {
-                     "user": "${{ steps.info.outputs.user }}",
-                    "time": "${{ steps.info.outputs.time }}",
-                    "project_name": "${{ steps.info.outputs.project_name }}",
-                    "repo_name": "${{ steps.info.outputs.repo_name }}",
-                    "workflow_name": "${{ steps.info.outputs.workflow_name }}",
-                    "run_id": "${{ steps.info.outputs.run_id }}",
-                    "run_number": "${{ steps.info.outputs.run_number }}",
-                    "status": "${{ steps.info.outputs.status }}",
-                    "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                      "user": "${{ steps.info.outputs.user }}",
+                      "time": "${{ steps.info.outputs.time }}",
+                      "project_name": "${{ steps.info.outputs.project_name }}",
+                      "repo_name": "${{ steps.info.outputs.repo_name }}",
+                      "workflow_name": "${{ steps.info.outputs.workflow_name }}",
+                      "run_id": "${{ steps.info.outputs.run_id }}",
+                      "run_number": "${{ steps.info.outputs.run_number }}",
+                      "status": "${{ steps.info.outputs.status }}",
+                      "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                     }
                   }
                 ]
-              } \
+              }' \
           "https://default624e7232a3b54b26911ec1886eb5be.42.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/67e4344eac42421ab0f7429b963d4985/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=fjk9ds9PtEF9jYdREfqHAcQlDRLqL1xU1HzY35PYdqU"
