@@ -37,6 +37,9 @@ jobs:
           if [ "${{ job.status }}" != "success" ]; then
             STATUS="failed"
           fi
+          
+          TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{
@@ -45,7 +48,7 @@ jobs:
                     "contentType": "application/vnd.microsoft.card.adaptive",
                     "content": {
                       "user": "${{ steps.info.outputs.user }}",
-                      "time": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
+                      "time": "${TIME}",
                       "project_name": "${{ steps.info.outputs.project_name }}",
                       "repo_name": "${{ steps.info.outputs.repo_name }}",
                       "workflow_name": "${{ steps.info.outputs.workflow_name }}",
