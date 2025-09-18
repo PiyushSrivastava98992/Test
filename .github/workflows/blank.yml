@@ -48,13 +48,13 @@ jobs:
                     "contentType": "application/vnd.microsoft.card.adaptive",
                     "content": {
                       "user": "${{ steps.info.outputs.user }}",
-                      "time": "${TIME}",
+                      "time": "$TIME",
                       "project_name": "${{ steps.info.outputs.project_name }}",
                       "repo_name": "${{ steps.info.outputs.repo_name }}",
                       "workflow_name": "${{ steps.info.outputs.workflow_name }}",
                       "run_id": "${{ steps.info.outputs.run_id }}",
                       "run_number": "${{ steps.info.outputs.run_number }}",
-                      "status": "${STATUS}",
+                      "status": "${{STATUS}}",
                       "branch":"${{ github.ref_name }}"
                     }
                   }
