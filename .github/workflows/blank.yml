@@ -24,9 +24,7 @@ jobs:
       - name: Collect Run Info
         id: info
         run: |
-          echo ${{ job }}" >> $GITHUB_OUTPUT
-          echo ${{ github }}" >> $GITHUB_OUTPUT
-          echo ${{ steps }}" >> $GITHUB_OUTPUT
+
 
       - name: Send Webhook to Teams Flow
         run: |
