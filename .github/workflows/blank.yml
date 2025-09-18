@@ -54,7 +54,7 @@ jobs:
                       "workflow_name": "${{ steps.info.outputs.workflow_name }}",
                       "run_id": "${{ steps.info.outputs.run_id }}",
                       "run_number": "${{ steps.info.outputs.run_number }}",
-                      "status": "${{STATUS}}",
+                      "status": "$STATUS",
                       "branch":"${{ github.ref_name }}"
                     }
                   }
