@@ -42,19 +42,19 @@ jobs:
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{
-                \"attachments\": [
+                "attachments": [
                   {
-                    \"contentType\": \"application/vnd.microsoft.card.adaptive\",
-                    \"content\": {
-                      \"user\": \"${{ steps.info.outputs.user }}\",
-                      \"time\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\",
-                      \"project_name\": \"${{ steps.info.outputs.project_name }}\",
-                      \"repo_name\": \"${{ steps.info.outputs.repo_name }}\",
-                      \"workflow_name\": \"${{ steps.info.outputs.workflow_name }}\",
-                      \"run_id\": \"${{ steps.info.outputs.run_id }}\",
-                      \"run_number\": \"${{ steps.info.outputs.run_number }}\",
-                      \"status\": \"${{ job.status }}\",
-                      \"branch\": \"${{ github.ref_name }}\"
+                    "contentType": "application/vnd.microsoft.card.adaptive",
+                    "content": {
+                      "user": "${{ steps.info.outputs.user }}",
+                      "time": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
+                      "project_name": "${{ steps.info.outputs.project_name }}",
+                      "repo_name": "${{ steps.info.outputs.repo_name }}",
+                      "workflow_name": "${{ steps.info.outputs.workflow_name }}",
+                      "run_id": "${{ steps.info.outputs.run_id }}",
+                      "run_number": "${{ steps.info.outputs.run_number }}",
+                      "status": "${{ job.status }}",
+                      "branch": "${{ github.ref_name }}"
                     }
                   }
                 ]
