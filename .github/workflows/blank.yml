@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      STATUS: "Success"
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -33,7 +35,6 @@ jobs:
 
       - name: Send Webhook to Teams Flow
         run: |
-          STATUS="success"
           if [ "${{ job.status }}" != "success" ]; then
             STATUS="failed"
           fi
