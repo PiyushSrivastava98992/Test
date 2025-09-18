@@ -45,7 +45,7 @@ jobs:
                     "contentType": "application/vnd.microsoft.card.adaptive",
                     "content": {
                       "user": "${{ steps.info.outputs.user }}",
-                      "time": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+                      "time": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
                       "project_name": "${{ steps.info.outputs.project_name }}",
                       "repo_name": "${{ steps.info.outputs.repo_name }}",
                       "workflow_name": "${{ steps.info.outputs.workflow_name }}",
