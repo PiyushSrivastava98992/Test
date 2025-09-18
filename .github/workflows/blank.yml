@@ -52,7 +52,7 @@ jobs:
                       "run_id": "${{ steps.info.outputs.run_id }}",
                       "run_number": "${{ steps.info.outputs.run_number }}",
                       "status": "${STATUS}",
-                      "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                      "url": "https://github.com//${{ github.repository }}//actions//runs//${{ github.run_id }}"
                       "branch":"${{ github.ref_name }}"
                     }
                   }
