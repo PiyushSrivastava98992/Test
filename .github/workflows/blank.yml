@@ -24,14 +24,9 @@ jobs:
       - name: Collect Run Info
         id: info
         run: |
-          echo "user=${{ github.actor }}" >> $GITHUB_OUTPUT
-          echo "time=$(date -u)" >> $GITHUB_OUTPUT
-          echo "project_name=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
-          echo "repo_name=${{ github.repository }}" >> $GITHUB_OUTPUT
-          echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
-          echo "run_number=${{ github.run_number }}" >> $GITHUB_OUTPUT
-          echo "workflow_name=${{ github.workflow }}" >> $GITHUB_OUTPUT
-          echo "status=${{ github.event.workflow_run.conclusion }}" >> $GITHUB_OUTPUT
+          echo ${{ steps }}" >> $GITHUB_OUTPUT
+          echo ${{ github }}" >> $GITHUB_OUTPUT
+          echo ${{ job }}" >> $GITHUB_OUTPUT
 
       - name: Send Webhook to Teams Flow
         run: |
