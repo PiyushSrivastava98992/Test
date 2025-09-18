@@ -33,6 +33,10 @@ jobs:
 
       - name: Send Webhook to Teams Flow
         run: |
+          STATUS="success"
+          if [ "${{ job.status }}" != "success" ]; then
+            STATUS="failed"
+          fi
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{
@@ -41,14 +45,15 @@ jobs:
                     "contentType": "application/vnd.microsoft.card.adaptive",
                     "content": {
                       "user": "${{ steps.info.outputs.user }}",
-                      "time": "${{ steps.info.outputs.time }}",
+                      "time": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
                       "project_name": "${{ steps.info.outputs.project_name }}",
                       "repo_name": "${{ steps.info.outputs.repo_name }}",
                       "workflow_name": "${{ steps.info.outputs.workflow_name }}",
                       "run_id": "${{ steps.info.outputs.run_id }}",
                       "run_number": "${{ steps.info.outputs.run_number }}",
-                      "status": "${{ steps.info.outputs.status }}",
+                      "status": "${STATUS}",
                       "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                      "branch":"${{ github.ref_name }}"
                     }
                   }
                 ]
